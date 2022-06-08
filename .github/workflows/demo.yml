@@ -1,0 +1,14 @@
+name: DevOps Github Actions Demo
+
+on: push
+
+jobs:
+  demo:
+    name: Github actions Demo
+    runs-on: ubuntu-latest
+
+    steps: 
+      - uses: actions/checkout@v2
+
+      - name: Check the file
+        run: ls -lrt
