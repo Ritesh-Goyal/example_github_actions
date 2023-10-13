@@ -98,7 +98,7 @@ RUN apt-get install -yqq \
     xfonts-base
 
 #COPY build/getarch.sh /tmp/getarch.sh
-COPY build /tmp
+COPY build/ /tmp
 #RUN chmod +x /tmp/getarch.sh
 #RUN /tmp/getarch.sh
 
