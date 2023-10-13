@@ -1,0 +1,7 @@
+/sh-root/sh-www/sh-api/storage/logs/*.log {
+  rotate 3
+  hourly
+  missingok
+  compress
+  dateext
+}

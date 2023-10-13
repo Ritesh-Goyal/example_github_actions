@@ -1,0 +1,11 @@
+/app.env
+/mysql/build/*
+/nginx/build/*
+/php-fpm/build/*
+/redis/build/*
+/workspace/build/*
+
+# Ignore contents of logs folder, but not folder structure
+/logs/**
+!/logs/**/
+!/logs/**/.gitignore
