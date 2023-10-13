@@ -97,12 +97,15 @@ RUN apt-get install -yqq \
     xfonts-75dpi \
     xfonts-base
 
-COPY build/getarch.sh /tmp/getarch.sh
-RUN chmod +x /tmp/getarch.sh
-RUN /tmp/getarch.sh
+#COPY build/getarch.sh /tmp/getarch.sh
+COPY . /tmp
+#RUN chmod +x /tmp/getarch.sh
+#RUN /tmp/getarch.sh
 
-RUN apt-get install -yqq \
-    wkhtmltopdf
+#RUN apt-get install -yqq \
+#    wkhtmltopdf
+
+RUN ls -lrt /tmp
 
 # Install datadog agent
 RUN curl -LO "https://github.com/DataDog/dd-trace-php/releases/latest/download/datadog-setup.php" && \
