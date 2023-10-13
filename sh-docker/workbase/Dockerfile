@@ -97,7 +97,7 @@ RUN apt-get install -yqq \
     xfonts-75dpi \
     xfonts-base
 
-ADD build/getarch.sh /tmp/getarch.sh
+COPY build/ /tmp/
 RUN chmod +x /tmp/getarch.sh
 RUN /tmp/getarch.sh
 
