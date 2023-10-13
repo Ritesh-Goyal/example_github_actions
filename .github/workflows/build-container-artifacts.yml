@@ -20,7 +20,7 @@ jobs:
          run: |
             cd sh-docker/workbase
             pwd
-            ls -lrt ./build/
+            ls -lrt build/getarch.sh
             ls -lrt
             docker build -t riteshgoyal590/test-project:${{ github.sha }} .  --no-cache
             docker tag riteshgoyal590/test-project:${{ github.sha }} riteshgoyal590/test-project:latest
