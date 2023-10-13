@@ -18,7 +18,8 @@ jobs:
        - name: Workbase Build, tag, and push image to Amazon ECR
          if: always()
          run: |
-            docker build -f sh-docker/workbase/Dockerfile -t riteshgoyal590/test-project:${{ github.sha }} .  --no-cache
+            cd sh-docker/workbase
+            docker build -t riteshgoyal590/test-project:${{ github.sha }} .  --no-cache
             docker tag riteshgoyal590/test-project:${{ github.sha }} riteshgoyal590/test-project:latest
             docker push riteshgoyal590/test-project:${{ github.sha }}
             docker push riteshgoyal590/test-project:latest
