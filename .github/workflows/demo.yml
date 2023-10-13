@@ -1,6 +1,9 @@
 name: DevOps Github Actions Demo
 
-on: push
+on:
+  push:
+    branches:
+      - 'dev'
 
 jobs:
   demo:
