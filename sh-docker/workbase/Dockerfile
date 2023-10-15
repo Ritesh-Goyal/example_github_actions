@@ -99,12 +99,13 @@ RUN apt-get install -yqq \
 
 #COPY build/getarch.sh /tmp/getarch.sh
 RUN pwd
-COPY build/getarch.sh /tmp/getarch.sh
-RUN chmod +x /tmp/getarch.sh
-RUN /tmp/getarch.sh
+# COPY build/getarch.sh /tmp/getarch.sh
+# RUN chmod +x /tmp/getarch.sh
+# RUN /tmp/getarch.sh
 
-#RUN apt-get install -yqq \
-#    wkhtmltopdf
+ENV architecture="amd64" 
+RUN apt-get install -yqq \
+    wkhtmltopdf
 
 RUN ls -lrt /tmp
 
