@@ -14,16 +14,15 @@ jobs:
        - name: Set up Docker Buildx
          uses: docker/setup-buildx-action@v3
        
-
        - name: Workbase Build, tag, and push image to Amazon ECR
          if: always()
-         run: |
-            cd sh-docker/workbase
-            pwd
-            ls -lrt build/getarch.sh
-            ls -lrt
-            docker build -t riteshgoyal590/test-project:${{ github.sha }} .  --no-cache
-            docker tag riteshgoyal590/test-project:${{ github.sha }} riteshgoyal590/test-project:latest
+         run: uname -m
+#             cd sh-docker/workbase
+#            pwd
+#            ls -lrt build/getarch.sh
+#            ls -lrt
+#            docker build -t riteshgoyal590/test-project:${{ github.sha }} .  --no-cache
+#            docker tag riteshgoyal590/test-project:${{ github.sha }} riteshgoyal590/test-project:latest
 #            docker push riteshgoyal590/test-project:${{ github.sha }}
 #            docker push riteshgoyal590/test-project:latest
 
