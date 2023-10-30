@@ -21,6 +21,10 @@ jobs:
         uses: codacy/git-version@2.7.1
         with:
           release-branch: main
+          prefix: v
+          major-identifier: major
+          minor-identifier: minor
+          dev-branch: dev
     
       - name: Use the version
         run: |
