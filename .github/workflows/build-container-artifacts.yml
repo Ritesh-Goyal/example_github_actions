@@ -22,11 +22,10 @@ jobs:
         with:
           release-branch: main
           prefix: v
-          major-identifier: major
-          minor-identifier: minor
+          major-identifier: /[major,breaking]
+          minor-identifier: /[minor,hotfix,feature]
           dev-branch: dev
     
       - name: Use the version
         run: |
           echo ${{ steps.version.outputs.version }}
-          
