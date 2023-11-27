@@ -14,14 +14,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         
-      - name: Get tag
-        id: tag
-        uses: dawidd6/action-get-tag@v1
-      
-      - name: Use tag
-        run: echo ${{steps.tag.outputs.tag}}
-      
-      - name: GitHub Tag Name example
-        run: |
-         echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
-         echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+      - uses: oprypin/find-latest-tag@v1
+        with:
+          repository: octokit/rest.js  # The repository to scan.
+        id: git_tag  # The step ID to refer to later.
+
+      - name: Print tag
+        run: echo "Repo is at version ${{ steps.git_tag.outputs.tag }}"
