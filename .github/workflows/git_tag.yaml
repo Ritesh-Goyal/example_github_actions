@@ -16,5 +16,5 @@ jobs:
 
       - name: Print tag
         run: | 
-           chmod +x get_git_tag.sh
-           ./get_git_tag.sh
+           chmod +x .github/workflows/get_git_tag.sh
+           ./.github/workflows/get_git_tag.sh
