@@ -16,5 +16,5 @@ jobs:
       
       - name: Create Tag from commit message
         id: git_tag 
-        run: echo $(git describe --tags --abbrev=0)
+        run: git describe --tags --abbrev=0
     
