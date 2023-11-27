@@ -13,11 +13,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        
-      - uses: oprypin/find-latest-tag@v1
-        with: 
-           repository: example_github_actions/
-        id: git_tag  # The step ID to refer to later.
 
       - name: Print tag
-        run: echo "Repo is at version ${{ steps.git_tag.outputs.tag }}"
+        run: | 
+           chmod +x get_git_tag.sh
+           ./get_git_tag.sh
