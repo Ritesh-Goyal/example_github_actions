@@ -15,8 +15,6 @@ jobs:
         uses: actions/checkout@v4
         
       - uses: oprypin/find-latest-tag@v1
-        with:
-          repository: octokit/rest.js  # The repository to scan.
         id: git_tag  # The step ID to refer to later.
 
       - name: Print tag
