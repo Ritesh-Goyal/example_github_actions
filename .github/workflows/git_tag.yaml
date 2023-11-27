@@ -1,0 +1,22 @@
+name: Git Tag Example
+on: 
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  tag:
+    name: TAG the Build
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Create Tag from commit message
+        id: git_tag 
+        run: echo "GIT_TAG=`echo $(git describe --tags --abbrev=0)`" >> $GITHUB_ENV
+      
+      - name: Print the tag
+        run: echo $GIT_TAG
