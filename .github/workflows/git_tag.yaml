@@ -13,10 +13,11 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+         fetch-depth: 0
 
       - name: Print tag
         run: |
-           git fetch --all
            echo "GIT_TAG=`echo $(git describe --tags --abbrev=0)`" >> $GITHUB_ENV
      
       - name: Test
