@@ -16,7 +16,5 @@ jobs:
       
       - name: Create Tag from commit message
         id: git_tag 
-        run: echo "GIT_TAG=`echo $(git describe --tags --abbrev=0)`" >> $GITHUB_ENV
-      
-      - name: Print the tag
-        run: echo $GIT_TAG
+        run: echo $(git describe --tags --abbrev=0)
+    
