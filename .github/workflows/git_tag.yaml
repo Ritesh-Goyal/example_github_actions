@@ -16,7 +16,7 @@ jobs:
         
       - uses: oprypin/find-latest-tag@v1
         with: 
-           repository: example_github_actions
+           repository: example_github_actions/
         id: git_tag  # The step ID to refer to later.
 
       - name: Print tag
