@@ -13,10 +13,11 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Print tag
-        run: | 
-           chmod +x .github/workflows/get_git_tag.sh
-           ./.github/workflows/get_git_tag.sh
+        run: |
+           git fetch -t
+           echo "GIT_TAG=`echo $(git describe --tags --abbrev=0)`" >> $GITHUB_ENV
+     
+      - name: Test
+        run: echo $GIT_TAG
