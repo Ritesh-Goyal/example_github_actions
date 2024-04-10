@@ -34,7 +34,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Check command
-        run: echo "This is demo"
+        run: echo "This is ritesh demo"
 
   test:
     runs-on: ubuntu-latest
