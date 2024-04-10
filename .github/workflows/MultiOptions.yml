@@ -5,6 +5,7 @@ on:
     inputs:
       environment:
         default: 'test'
+        description: select env for edge lambda deployment
         required: true
         type: choice
         options: 
