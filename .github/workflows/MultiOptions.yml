@@ -1,0 +1,68 @@
+name: Deploy Edge Lambda
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        default: 'test'
+        required: true
+        type: choice
+        options: 
+          - test
+          - demo
+          - starlight
+          - live
+          - uat
+jobs:
+  glimmer:
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event.inputs.environment.options == 'live' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check command
+        run: echo "This is Live"
+
+  demo:
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event.inputs.environment.options == 'demo' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check command
+        run: echo "This is demo"
+
+  test:
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event.inputs.environment.options == 'test' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check command
+        run: echo "This is Test"
+
+  starlight:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.environment.options == 'starlight' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check command
+        run: echo "This is Starlight"
+
+  uat:
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event.inputs.environment.options == 'uat' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check command
+        run: echo "This is UAT"
